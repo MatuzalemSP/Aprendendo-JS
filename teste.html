@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Nacionalidade</title>
+</head>
+<body>
+    <h1>Verificar Nacionalidade</h1>
+    País: <input type="text" name="país" id="país">
+    <input type="button" value="verificar" onclick="teste()">
+    <div id="res">
+
+    </div>
+    <script>
+        function teste(){
+            var país = document.getElementById('país').value
+            var res = document.querySelector('div#res')
+            país = país.toUpperCase()
+            res.innerHTML = 'Bem-vindo'
+            if (país == 'BRASIL'){
+                res.innerHTML += `<br>Você é do <strong>${país}</strong></br>`
+                res.innerHTML += '<p>Você é <strong>BRASILEIRO(A)</strong></p>'
+            } 
+            else if (país.length == 0){
+                res.innerHTML +='<p><strong>O espaço não pode estar vazio</strong></p>'
+            }
+            else {
+                res.innerHTML += `<br>Você é do <strong>${país}</strong></br>`
+                res.innerHTML = 'Você é um <strong>ESTRANGEIRO(A)</strong>'
+            }
+        }
+    </script>
+</body>
+</html>
